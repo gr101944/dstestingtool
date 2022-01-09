@@ -8,12 +8,12 @@ var request_as_promised = require('request-promise');
 //QnA Maker configurations
 
 var host = "https://taihopeoplebuddyfaq.azurewebsites.net/qnamaker";
-var endpoint_key = "819b1761-13e6-4fee-9209-951a65015d94";
+var endpoint_key = "xxxxx";
 var route = "/knowledgebases/f98ec0fa-a708-4847-bb08-7e9638a8ac1b/generateAnswer";
 
 //Azure Search configurations
 const cognitiveSearchURL = "https://testingcognitivesearch.search.windows.net/indexes/azureblob-index/docs?api-version=2020-06-30-Preview"
-const apiKey = "5A51F6733818E0CF1F44A5B97716F743";
+const apiKey = "xxxx";
 
 
 var questionSearch = {'question': '','top': 5};
