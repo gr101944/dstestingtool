@@ -1,0 +1,26 @@
+{
+  "name": "seachtestingcode",
+  "version": "1.0.0",
+  "description": "Create 2 folders input and output",
+  "main": "testSearch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr101944/searchTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gr101944/searchTest/issues"
+  },
+  "homepage": "https://github.com/gr101944/searchTest#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "fs": "0.0.1-security",
+    "request-promise": "^4.2.6"
+  }
+}

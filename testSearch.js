@@ -8,21 +8,26 @@ var request_as_promised = require('request-promise');
 //QnA Maker configurations
 
 var host = "https://taihopeoplebuddyfaq.azurewebsites.net/qnamaker";
-var endpoint_key = "xxxxx";
-var route = "/knowledgebases/f98ec0fa-a708-4847-bb08-7e9638a8ac1b/generateAnswer";
+//Replace endpoint_key and KnowledgeBaseId below with actual values
+var endpoint_key = "endpoint_key";
+var route = "/knowledgebases/knowledgebaseid/generateAnswer";
 
 //Azure Search configurations
 const cognitiveSearchURL = "https://testingcognitivesearch.search.windows.net/indexes/azureblob-index/docs?api-version=2020-06-30-Preview"
 const apiKey = "xxxx";
-
-
 var questionSearch = {'question': '','top': 5};
+
+//Input Output files
+const inputFolderName = "input";
+const outputFolderName = "output";
+const inputFileName = "questionsTest.csv"
+const outputFileName = "answersQnAMaker.csv"
 
 var questionArray = [];
 
-var outputLocationQnA = 'output/answersQnaMaker.csv'; 
+var outputLocationQnA =  outputFolderName + "/" + outputFileName;
 var outputLocationCogtiveSearch = 'output/answersCognitiveSearch.csv'; 
-var inputQuestionList = 'input/questions.csv';
+var inputQuestionList = inputFolderName + "/" + inputFileName;
 
 
 var question = '';
@@ -86,14 +91,15 @@ async function readQuestions (){
            questionSearch.question = questionArray[p]
            //console.log ("Processing Question: " + questionArray[p])
            await getAnswerQnAMaker(questionSearch, p)
+           console.log ("Done writing answers to Question " + (p +1))
        }
        console.log ("Done writing QnA Maker answers!")
 
-       for (p=0; p < questionArray.length; p++){
+    //    for (p=0; p < questionArray.length; p++){
 
-        await getAnswerCogSearch(questionArray[p])
-       }
-       console.log ("Done writing Cognitive Search answers!")
+    //     await getAnswerCogSearch(questionArray[p])
+    //    }
+    //    console.log ("Done writing Cognitive Search answers!")
    
    
    
